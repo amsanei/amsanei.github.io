@@ -1,0 +1,79 @@
+@font-face {
+    font-family: "Estedad";
+    src: url("/fonts/estedad/Estedad-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Estedad";
+    src: url("/fonts/estedad/Estedad-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --color-prime: blue;
+
+    --color-border: #e7e7e7;
+
+    --color-text-second: hsla(0, 0%, 40%, 1);
+    --color-text-prime: #121212;
+
+    --color-bg-second: #fafafa;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Estedad;
+}
+
+body {
+    margin: 16px 0;
+    padding: 0;
+    direction: rtl;
+    color: var(--color-text-prime);
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 22px;
+}
+
+header .img {
+    width: 196px;
+    height: 196px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-second);
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+header .img img {
+    width: 168px;
+    height: 168px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.info {
+    text-align: center;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.job {
+    color: var(--color-text-second);
+}
