@@ -141,6 +141,7 @@ body {
     align-items: center;
     gap: 8px;
     padding: 16px 8px;
+    border-radius: 4px;
 }
 
 .skills .item img {
