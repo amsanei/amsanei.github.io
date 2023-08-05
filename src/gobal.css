@@ -20,6 +20,7 @@
     --color-text-second: hsla(0, 0%, 40%, 1);
     --color-text-prime: #121212;
 
+    --color-bg-prime: #fff;
     --color-bg-second: #fafafa;
 }
 
@@ -40,13 +41,13 @@ body {
     margin: auto;
 }
 
-header {
+.header {
     display: flex;
     flex-direction: column-reverse;
     gap: 22px;
 }
 
-header .img {
+.header .img {
     width: 196px;
     height: 196px;
     align-self: center;
@@ -58,7 +59,7 @@ header .img {
     border-radius: 100%;
 }
 
-header .img img {
+.header .img img {
     width: 168px;
     height: 168px;
     border-radius: 100%;
@@ -106,4 +107,43 @@ header .img img {
     margin-top: 32px;
     text-decoration: none;
     color: var(--color-text-prime);
+}
+
+.skills {
+    margin-block: 64px;
+}
+
+.skills header {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.skills header .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.skills header .desc {
+    font-size: 14px;
+    color: var(--color-text-second);
+}
+
+.skills .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.skills .item {
+    background-color: var(--color-bg-second);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 8px;
+}
+
+.skills .item img {
+    width: 58px;
+    height: 58px;
 }
