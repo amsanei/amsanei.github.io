@@ -23,8 +23,8 @@
     }
 
     .items {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 16px;
     }
 
@@ -36,7 +36,7 @@
 
     .items .title {
         font-weight: bold;
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 8px;
     }
 
@@ -55,6 +55,16 @@
         font-size: 14px;
         color: var(--color-text-prime);
     }
+
+    @media only screen and (min-width: 992px) {
+        .items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .items .desc {
+            font-size: 14px;
+        }
+    }
 </style>
 
 <section>
@@ -63,6 +73,20 @@
         <div class="desc">پروژه های انجام شده</div>
     </header>
     <div class="items">
+        <div class="item">
+            <div class="img">
+                <img src="/images/uma-cert.png" alt="" />
+            </div>
+            <div class="title">وبسایت مرکز آپا</div>
+            <div class="desc">
+                برای درس کارآموزی در دانشگاه برای مرکز آپا وبسایتشون رو از نوع
+                طراحی کردم
+            </div>
+            <footer>
+                <a href="cert.uma.ac.ir" target="_blank">مشاهده وبسایت</a>
+                <a href="#">جزییات بیشتر</a>
+            </footer>
+        </div>
         <div class="item">
             <div class="img">
                 <img src="/images/uma-cert.png" alt="" />
