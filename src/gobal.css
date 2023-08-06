@@ -30,7 +30,7 @@
 }
 
 body {
-    margin: 16px 0;
+    margin: 0;
     padding: 0;
     direction: rtl;
     color: var(--color-text-prime);
@@ -38,7 +38,7 @@ body {
 
 .container {
     width: 90%;
-    margin: auto;
+    margin: 16px auto;
 }
 
 .header {
@@ -140,9 +140,15 @@ body {
 }
 
 @media only screen and (min-width: 992px) {
+    body {
+        background-color: var(--color-bg-second);
+    }
+
     .container {
         width: 60%;
-        margin: auto;
+        background-color: var(--color-bg-prime);
+        border-radius: 4px;
+        padding: 16px 32px;
     }
 
     .header {
