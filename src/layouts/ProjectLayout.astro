@@ -1,0 +1,35 @@
+---
+import "../gobal.css";
+import Header from "../components/Header.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<style>
+    img {
+        width: 100%;
+    }
+</style>
+
+<html lang="fa">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>امیر محمد صانعی</title>
+    </head>
+    <body>
+        <Header />
+        <div class="container">
+            <div>
+                <img src={frontmatter.tumbnail} alt="" />
+            </div>
+            <h1>{frontmatter.title}</h1>
+            <a href={frontmatter.link} target="_blank">مشاهده</a>
+            <slot />
+            <h2>تکنولوژی های استفاده شده</h2>
+            {frontmatter.tecs.map((tec) => <div>{tec}</div>)}
+        </div>
+    </body>
+</html>
