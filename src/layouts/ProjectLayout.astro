@@ -31,5 +31,21 @@ const { frontmatter } = Astro.props;
             <h2>تکنولوژی های استفاده شده</h2>
             {frontmatter.tecs.map((tec) => <div>{tec}</div>)}
         </div>
+        <script is:inline>
+            let theme = localStorage.getItem("theme")
+                ? localStorage.getItem("theme")
+                : "light";
+
+            console.log(theme);
+            // const themeToggleBtn = document.querySelector("#theme");
+
+            if (theme === "light") {
+                // themeToggleBtn.innerHTML = "🌙";
+                document.body.classList = "theme-light";
+            } else {
+                // themeToggleBtn.innerHTML = "🌞";
+                document.body.classList = "theme-dark";
+            }
+        </script>
     </body>
 </html>
