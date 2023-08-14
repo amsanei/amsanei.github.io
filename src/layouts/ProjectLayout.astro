@@ -8,6 +8,47 @@ const { frontmatter } = Astro.props;
 <style>
     img {
         width: 100%;
+        border-radius: 4px;
+    }
+
+    a {
+        color: var(--color-prime);
+    }
+
+    .tecs {
+        display: flex;
+        gap: 16px;
+        text-transform: uppercase;
+        font-size: 14px;
+        direction: ltr;
+    }
+
+    .tecs div {
+        background-color: var(--color-bg-second);
+        padding: 4px 16px;
+        border-radius: 100px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-block: 0 8px;
     }
 </style>
 
@@ -17,35 +58,52 @@ const { frontmatter } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>امیر محمد صانعی</title>
+        <title>صانعی | {frontmatter.title}</title>
     </head>
     <body>
         <div class="container">
             <Header />
             <div>
-                <img src={frontmatter.thumbnail} alt="" />
+                <img src={frontmatter.thumbnail} alt={frontmatter.title} />
             </div>
-            <h1>{frontmatter.title}</h1>
-            <a href={frontmatter.link} target="_blank">مشاهده</a>
+            <header>
+                <h1>{frontmatter.title}</h1>
+                <a href={frontmatter.link} target="_blank">مشاهده</a>
+            </header>
             <slot />
             <h2>تکنولوژی های استفاده شده</h2>
-            {frontmatter.tecs.map((tec) => <div>{tec}</div>)}
+            <div class="tecs">
+                {frontmatter.tecs.map((tec) => <div>{tec}</div>)}
+            </div>
         </div>
         <script is:inline>
             let theme = localStorage.getItem("theme")
                 ? localStorage.getItem("theme")
                 : "light";
 
-            console.log(theme);
-            // const themeToggleBtn = document.querySelector("#theme");
+            const themeToggleBtn = document.querySelector("#theme-toggle");
 
             if (theme === "light") {
-                // themeToggleBtn.innerHTML = "🌙";
+                themeToggleBtn.innerHTML = "🌙";
                 document.body.classList = "theme-light";
             } else {
-                // themeToggleBtn.innerHTML = "🌞";
+                themeToggleBtn.innerHTML = "🔆";
                 document.body.classList = "theme-dark";
             }
+
+            themeToggleBtn.addEventListener("click", () => {
+                if (theme === "light") {
+                    theme = "dark";
+                    themeToggleBtn.innerHTML = "🔆";
+                    document.body.classList = "theme-dark";
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    theme = "light";
+                    themeToggleBtn.innerHTML = "🌙";
+                    document.body.classList = "theme-light";
+                    localStorage.setItem("theme", "light");
+                }
+            });
         </script>
     </body>
 </html>

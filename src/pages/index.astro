@@ -28,7 +28,7 @@ import Links from "../components/Links.astro";
                     <div class="name">امیر محمد صانعی</div>
                     <div class="job">طراح و توسعه دهنده رابط کاربری</div>
                     <div class="customize">
-                        <button id="theme">🌞</button>
+                        <button id="theme-toggle">🔆</button>
                     </div>
                 </div>
                 <div class="img">
@@ -124,19 +124,19 @@ import Links from "../components/Links.astro";
                 ? localStorage.getItem("theme")
                 : "light";
 
-            const themeToggleBtn = document.querySelector("#theme");
+            const themeToggleBtn = document.querySelector("#theme-toggle");
             if (theme === "light") {
                 themeToggleBtn.innerHTML = "🌙";
                 document.body.classList = "theme-light";
             } else {
-                themeToggleBtn.innerHTML = "🌞";
+                themeToggleBtn.innerHTML = "🔆";
                 document.body.classList = "theme-dark";
             }
 
             themeToggleBtn.addEventListener("click", () => {
                 if (theme === "light") {
                     theme = "dark";
-                    themeToggleBtn.innerHTML = "🌞";
+                    themeToggleBtn.innerHTML = "🔆";
                     document.body.classList = "theme-dark";
                     localStorage.setItem("theme", "dark");
                 } else {
