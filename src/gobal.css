@@ -12,7 +12,7 @@
     font-style: normal;
 }
 
-:root {
+.theme-light {
     --color-prime: blue;
 
     --color-border: #e7e7e7;
@@ -20,8 +20,22 @@
     --color-text-second: hsla(0, 0%, 40%, 1);
     --color-text-prime: #121212;
 
-    --color-bg-prime: #fff;
+    --color-bg-prime: rgb(255, 255, 255);
     --color-bg-second: #fafafa;
+    --color-bg-header: rgba(255, 255, 255, 0.95);
+}
+
+.theme-dark {
+    --color-prime: blue;
+
+    --color-border: #2e2e2e;
+
+    --color-text-second: rgb(192, 192, 192);
+    --color-text-prime: #fff;
+
+    --color-bg-prime: rgb(18, 18, 18);
+    --color-bg-second: #292929;
+    --color-bg-header: rgba(18, 18, 18, 0.8);
 }
 
 * {
@@ -30,15 +44,28 @@
 }
 
 body {
-    margin: 16px 0;
+    margin: 0;
     padding: 0;
     direction: rtl;
     color: var(--color-text-prime);
+    background-color: var(--color-bg-prime);
 }
 
 .container {
     width: 90%;
-    margin: auto;
+    margin: 16px auto;
+}
+
+#theme-toggle {
+    background-color: var(--color-bg-second);
+    padding: 4px 8px;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
@@ -52,6 +79,12 @@ body {
     height: 168px;
     border-radius: 100%;
     object-fit: cover;
+}
+
+.customize {
+    margin-top: 16px;
+    display: flex;
+    gap: 8px;
 }
 
 .info {
@@ -100,12 +133,12 @@ body {
 }
 
 .skills {
-    margin-block: 64px;
+    margin-block: 48px;
 }
 
 .skills header {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 .skills header .title {
@@ -142,7 +175,8 @@ body {
 @media only screen and (min-width: 992px) {
     .container {
         width: 60%;
-        margin: auto;
+        border-radius: 4px;
+        padding: 16px 32px;
     }
 
     .header {

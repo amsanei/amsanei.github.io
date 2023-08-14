@@ -1,7 +1,17 @@
 ---
 import "../gobal.css";
 import Projects from "../components/Projects.astro";
+import Links from "../components/Links.astro";
 ---
+
+<style>
+    :global(.dark) .sun {
+        fill: transparent;
+    }
+    :global(.dark) .moon {
+        fill: white;
+    }
+</style>
 
 <html lang="fa">
     <head>
@@ -17,12 +27,16 @@ import Projects from "../components/Projects.astro";
                 <div class="info">
                     <div class="name">امیر محمد صانعی</div>
                     <div class="job">طراح و توسعه دهنده رابط کاربری</div>
+                    <div class="customize">
+                        <button id="theme-toggle">🔆</button>
+                    </div>
                 </div>
                 <div class="img">
                     <img src="/images/amir.png" alt="" />
                 </div>
             </header>
-            <section class="quick-acc">
+            <Links />
+            <!-- <section class="quick-acc">
                 <div class="item">
                     <div class="title">رزومه</div>
                     <div class="desc">
@@ -45,11 +59,11 @@ import Projects from "../components/Projects.astro";
                     </div>
                     <a href="#" class="action">مشاهده</a>
                 </div>
-            </section>
+            </section> -->
             <section class="skills">
                 <header>
                     <div class="title">مهارت ها</div>
-                    <div class="desc">*جمله بروسلی*</div>
+                    <!-- <div class="desc">*جمله بروسلی*</div> -->
                 </header>
                 <div class="items">
                     <div class="item">
@@ -67,6 +81,10 @@ import Projects from "../components/Projects.astro";
                     <div class="item">
                         <img src="/images/astro.svg" alt="" />
                         <div>Astro js</div>
+                    </div>
+                    <div class="item">
+                        <img src="/images/alpinejs.svg" alt="" />
+                        <div>Alpine js</div>
                     </div>
                     <div class="item">
                         <img src="/images/tailwindcss.svg" alt="" />
@@ -100,5 +118,34 @@ import Projects from "../components/Projects.astro";
             </section>
             <Projects />
         </div>
+
+        <script is:inline>
+            let theme = localStorage.getItem("theme")
+                ? localStorage.getItem("theme")
+                : "light";
+
+            const themeToggleBtn = document.querySelector("#theme-toggle");
+            if (theme === "light") {
+                themeToggleBtn.innerHTML = "🌙";
+                document.body.classList = "theme-light";
+            } else {
+                themeToggleBtn.innerHTML = "🔆";
+                document.body.classList = "theme-dark";
+            }
+
+            themeToggleBtn.addEventListener("click", () => {
+                if (theme === "light") {
+                    theme = "dark";
+                    themeToggleBtn.innerHTML = "🔆";
+                    document.body.classList = "theme-dark";
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    theme = "light";
+                    themeToggleBtn.innerHTML = "🌙";
+                    document.body.classList = "theme-light";
+                    localStorage.setItem("theme", "light");
+                }
+            });
+        </script>
     </body>
 </html>

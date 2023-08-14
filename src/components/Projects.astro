@@ -1,3 +1,7 @@
+---
+const projects = await Astro.glob("../pages/projects/*.md");
+---
+
 <style>
     section {
         margin: 32px 0;
@@ -5,7 +9,7 @@
 
     header {
         text-align: center;
-        margin-bottom: 16px;
+        margin-bottom: 32px;
     }
 
     header .title {
@@ -17,6 +21,9 @@
     }
     section img {
         width: 100%;
+        height: 218px;
+        object-fit: contain;
+        background-color: var(--color-bg-second);
         border-radius: 4px;
         display: block;
         margin-bottom: 16px;
@@ -29,9 +36,10 @@
     }
 
     .item {
-        padding: 16px 16px;
-        border-radius: 2px;
-        background-color: var(--color-bg-second);
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 8px;
     }
 
     .items .title {
@@ -47,7 +55,7 @@
 
     footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 
     footer a {
@@ -58,7 +66,7 @@
 
     @media only screen and (min-width: 992px) {
         .items {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .items .desc {
@@ -70,50 +78,21 @@
 <section>
     <header>
         <div class="title">پروژه ها</div>
-        <div class="desc">پروژه های انجام شده</div>
     </header>
     <div class="items">
-        <div class="item">
-            <div class="img">
-                <img src="/images/uma-cert.png" alt="" />
-            </div>
-            <div class="title">وبسایت مرکز آپا</div>
-            <div class="desc">
-                برای درس کارآموزی در دانشگاه برای مرکز آپا وبسایتشون رو از نوع
-                طراحی کردم
-            </div>
-            <footer>
-                <a href="cert.uma.ac.ir" target="_blank">مشاهده وبسایت</a>
-                <a href="#">جزییات بیشتر</a>
-            </footer>
-        </div>
-        <div class="item">
-            <div class="img">
-                <img src="/images/uma-cert.png" alt="" />
-            </div>
-            <div class="title">وبسایت مرکز آپا</div>
-            <div class="desc">
-                برای درس کارآموزی در دانشگاه برای مرکز آپا وبسایتشون رو از نوع
-                طراحی کردم
-            </div>
-            <footer>
-                <a href="cert.uma.ac.ir" target="_blank">مشاهده وبسایت</a>
-                <a href="#">جزییات بیشتر</a>
-            </footer>
-        </div>
-        <div class="item">
-            <div class="img">
-                <img src="/images/uma-cert.png" alt="" />
-            </div>
-            <div class="title">وبسایت مرکز آپا</div>
-            <div class="desc">
-                برای درس کارآموزی در دانشگاه برای مرکز آپا وبسایتشون رو از نوع
-                طراحی کردم
-            </div>
-            <footer>
-                <a href="cert.uma.ac.ir" target="_blank">مشاهده وبسایت</a>
-                <a href="#">جزییات بیشتر</a>
-            </footer>
-        </div>
+        {
+            projects.map((project) => (
+                <div class="item">
+                    <div class="img">
+                        <img src={project.frontmatter.thumbnail} />
+                    </div>
+                    <div class="title">{project.frontmatter.title}</div>
+                    <div class="desc">{project.frontmatter.description}</div>
+                    <footer>
+                        <a href={project.url}>جزییات بیشتر</a>
+                    </footer>
+                </div>
+            ))
+        }
     </div>
 </section>
