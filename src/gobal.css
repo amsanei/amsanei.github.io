@@ -134,12 +134,12 @@ body {
 }
 
 .skills {
-    margin-block: 64px;
+    margin-block: 48px;
 }
 
 .skills header {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
 }
 
 .skills header .title {
