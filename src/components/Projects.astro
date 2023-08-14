@@ -21,7 +21,9 @@ const projects = await Astro.glob("../pages/projects/*.md");
     }
     section img {
         width: 100%;
-        min-height: 218px;
+        height: 218px;
+        object-fit: contain;
+        background-color: var(--color-bg-second);
         border-radius: 4px;
         display: block;
         margin-bottom: 16px;
@@ -34,9 +36,10 @@ const projects = await Astro.glob("../pages/projects/*.md");
     }
 
     .item {
-        padding: 16px 16px;
-        border-radius: 2px;
-        background-color: var(--color-bg-second);
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 8px;
     }
 
     .items .title {
@@ -87,7 +90,7 @@ const projects = await Astro.glob("../pages/projects/*.md");
                     <div class="title">{project.frontmatter.title}</div>
                     <div class="desc">{project.frontmatter.description}</div>
                     <footer>
-                        <a href={project.frontmatter.link}>جزییات بیشتر</a>
+                        <a href={project.url}>جزییات بیشتر</a>
                     </footer>
                 </div>
             ))
