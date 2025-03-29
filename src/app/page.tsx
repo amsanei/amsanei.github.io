@@ -1,3 +1,5 @@
+import Terminal from "@/components/terminal";
+
 export default function Home() {
   return (
     <div className="">
@@ -6,9 +8,8 @@ export default function Home() {
         so I know what he can do. But this flow he took on this track was
         different. He just keeps evolving.
       </div>
-      <div className="bg-black h-[60vh] mt-4 text-white p-2 font-[family-name:var(--font-geist-mono)]">
-        <div className="">comming soon...</div>
-      </div>
+      
+        <Terminal />
     </div>
   );
 }
