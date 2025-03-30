@@ -7,7 +7,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="flex justify-between items-center sticky top-0 z-50 py-4 bg-[#F8F8F8]">
+    <header className="flex justify-between items-center sticky top-0 z-40 py-4 bg-[#F8F8F8]">
       <div className="flex gap-2 items-center">
         <div className="size-8 bg-white text-black font-bold flex justify-center items-center rounded">
           11
