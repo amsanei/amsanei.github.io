@@ -1,13 +1,18 @@
+'use client'
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="flex justify-between items-center">
       <div className="flex gap-2 items-center">
         <div className="size-8 bg-white text-black font-bold flex justify-center items-center rounded">
           11
         </div>
-        <div>Amir Mohammad Sanei</div>
+        <div>{pathname === "/about" ? "amsanei" : "Amir Mohammad Sanei"}</div>
       </div>
       <div className="flex gap-4">
         {LINKS.map((link) => (
