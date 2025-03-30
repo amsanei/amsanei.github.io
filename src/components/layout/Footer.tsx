@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="flex justify-between">
+    <footer className="flex justify-between mb-8">
       <div className="flex gap-2">
         <div className="bg-white size-8 rounded-full flex items-center justify-center p-1 ">
           <svg

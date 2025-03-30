@@ -145,7 +145,7 @@ export default function page() {
         </div>
       </div>
       <Image
-        className="w-full h-[84vh] object-cover sticky top-4"
+        className="w-full h-[84vh] object-cover sticky top-20"
         src="/me.jpg"
         alt="Amir"
         width={300}
