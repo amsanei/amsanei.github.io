@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const INTRO_TEXT = (
   <>
@@ -16,6 +16,10 @@ export default function Terminal() {
   const [display, setDisplay] = useState(INTRO_TEXT);
   const [fullScreen, setFullScreen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (inputRef.current) inputRef.current.focus();
+  }, [inputRef.current]);
+
   const submitInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       switch (inputRef.current?.value) {
@@ -24,7 +28,9 @@ export default function Terminal() {
           break;
         default:
           print(
-            <p className="text-red-600 block font-bold">terminal is not ready! use clear commend for clearing screen.</p>
+            <p className="text-red-600 block font-bold">
+              ERROR: Invalid command. Type "help" for the current list of implemented commands.
+            </p>
           );
       }
 
@@ -47,7 +53,7 @@ export default function Terminal() {
       className={` bg-black ${
         fullScreen
           ? "h-screen w-screen fixed inset-0"
-          : "relative h-[60vh] mt-4"
+          : "relative h-[70vh] mt-4"
       }   text-white p-2 terminal`}
     >
       <div className=" w-full flex justify-between border-b border-b-white/20">
