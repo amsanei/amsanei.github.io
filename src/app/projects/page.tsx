@@ -1,3 +1,4 @@
+import Gallery from "@/components/ui/Gallery";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -99,13 +100,9 @@ export default function page() {
               </Link>
             </div>
           </div>
-          <div>
-            <Image
-              src={item.image}
-              alt={item.title}
-              width={300}
-              height={300}
-              className="w-full object-cover border border-black/20"
+          <div className="w-full object-cover border border-black/20">
+            <Gallery
+              cover={{ src: item.image, alt: item.title }}
             />
           </div>
         </div>
