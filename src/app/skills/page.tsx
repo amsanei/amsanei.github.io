@@ -3,7 +3,7 @@ import React from "react";
 export default function page() {
   return (
     <div>
-      <div className="grid grid-cols-5 gap-4 mt-8">
+      <div className="grid grid-cols-5 gap-4 mt-2">
         {DATA.map((item, index) => (
           <div
             className="border border-black/20 rounded py-4 flex flex-col items-center"
@@ -11,7 +11,9 @@ export default function page() {
           >
             <div className="size-14 ">{item.icon}</div>
             <div className="mt-4">{item.name}</div>
-            <div className="">{item.level}</div>
+            <div className="border border-black/20 mt-2 text-sm px-4 rounded-full">
+              {item.level}
+            </div>
           </div>
         ))}
       </div>
