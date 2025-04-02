@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from "react";
 
 const INTRO_TEXT = (
   <>
-    👋🏻Hey! This is Amir, Welcome to my personal website.
+    Hey! This is Amir, Welcome to my personal website.
     <br />
     Im working on a simple terminal with some basic commedns.
     <br />
     It will be ready soon :)
+    <br />
+    try <span className="italic">clear</span> for clearing screen
   </>
 );
 
@@ -133,7 +135,7 @@ export default function Terminal() {
               </div>
             ))}
 
-          <div
+          {/* <div
             onClick={() => newTerminal("Terminal")}
             className="border border-b-0 border-s-0 flex items-center justify-center px-2 cursor-pointer border-white/20"
           >
@@ -154,7 +156,7 @@ export default function Terminal() {
                 d="M5 12h14m-7 7V5"
               />
             </svg>
-          </div>
+          </div> */}
         </div>
         <div>
           <div
@@ -192,5 +194,3 @@ export default function Terminal() {
     </div>
   );
 }
-
-const PAGES = ["home", "projects", "about", "contact", "resume"];
