@@ -71,7 +71,7 @@ export default function Terminal() {
         fullScreen
           ? "h-screen w-screen fixed inset-0 z-50"
           : "relative h-[70vh] mt-4"
-      }   text-white p-2 terminal`}
+      }   text-white p-2 terminal isolate`}
     >
       {terminals.length === 0 && (
         <div className="grid place-content-center absolute z-50 inset-0 bg-white/10 backdrop-blur w-full h-full">
