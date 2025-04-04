@@ -4,11 +4,11 @@ import Link from "next/link";
 
 export default function page() {
   return (
-    <div className="mt-8">
+    <div>
       {DATA.map((item) => (
         <div
           key={item.id}
-          className="grid grid-cols-3 gap-4 border-t border-y-black/20 py-4"
+          className="flex flex-col-reverse md:grid md:grid-cols-3 gap-4 border-t border-y-black/20 py-4"
         >
           <div className="col-span-2 flex flex-col">
             <div className="flex justify-between items-center">

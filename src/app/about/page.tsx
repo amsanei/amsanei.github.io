@@ -12,7 +12,7 @@ function DataRow({ label, value }: { label: string; value: string }) {
 
 export default function page() {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="flex flex-col-reverse md:grid md:grid-cols-3 gap-4">
       <div className="col-span-2">
         <div className="leading-loose text-justify text-sm">
           <div className="flex flex-col gap-2 mb-4">
@@ -64,27 +64,8 @@ export default function page() {
         </div>
         <div className="mt-8">
           <div className="text-xl font-bold">Education</div>
-          <div className="grid grid-cols-2 gap-4 mt-2">
+          <div className="grid md:grid-cols-2 gap-4 mt-2">
             <div className="border border-black/20 flex flex-col gap-8 items-center p-4 relative">
-              <div className="absolute end-0 top-0">
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="size-32 opacity-5"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1"
-                    d="M3.78552 9.5 12.7855 14l9-4.5-9-4.5-8.99998 4.5Zm0 0V17m3-6v6.2222c0 .3483 2 1.7778 5.99998 1.7778 4 0 6-1.3738 6-1.7778V11"
-                  />
-                </svg>
-              </div>
               <div className="font-bold mb-2">
                 Bachelor Degree in Software Engineering
               </div>
@@ -100,25 +81,6 @@ export default function page() {
               </div>
             </div>
             <div className="border border-black/20 flex flex-col gap-8 items-center p-4 relative">
-              <div className="absolute end-0 top-0">
-                <svg
-                  className="size-32 opacity-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1"
-                    d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"
-                  />
-                </svg>
-              </div>
               <div className="font-bold mb-2">
                 Master's degree in software engineering
               </div>
@@ -145,7 +107,7 @@ export default function page() {
         </div>
       </div>
       <Image
-        className="w-full h-[84vh] object-cover sticky top-20"
+        className="w-full h-[50vh] md:h-[84vh] object-cover md:sticky md:top-20"
         src="/me.jpg"
         alt="Amir"
         width={300}
