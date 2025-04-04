@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Terminal from "@/components/terminal";
 
 export default function Home() {
   return (
-    <div className="grid place-content-center h-screen text-4xl font-bold">
-     Im working on it :)
+    <div className="">
+        <Terminal />
     </div>
   );
 }
