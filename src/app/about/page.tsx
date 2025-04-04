@@ -17,7 +17,12 @@ export default function page() {
         <div className="leading-loose text-justify text-sm">
           <div className="flex flex-col gap-2 mb-4">
             <div className="font-bold text-4xl">Amir Mohammad Sanei</div>
-            <div>Designer && Developer</div>
+            <div className="flex gap-2 items-center">
+              <div>Designer && Developer</div>
+              <div className="bg-green-200 px-2 rounded-full">
+                Open To Work
+              </div>
+            </div>
           </div>
           <div>
             With over four years of experience in front-end development and
@@ -122,7 +127,7 @@ const WORKS = [
     id: 1,
     logo: "/apa.png",
     title: "Mohaghegh Ardebil APA Center",
-    duration: "1 Years And 6 mounth",
+    duration: "1 Year And 6 mounth",
   },
   { id: 2, logo: "/anibaran.svg", title: "Ani Baran", duration: "1 Year" },
   { id: 3, logo: "/diyan.svg", title: "Diyan", duration: "8 Mounth" },
