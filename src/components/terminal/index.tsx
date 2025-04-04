@@ -4,11 +4,9 @@ import { useEffect, useRef, useState } from "react";
 
 const INTRO_TEXT = (
   <>
-    Hey! This is Amir, Welcome to my personal website.
+    Hey! This is Amir, Welcome to my Portfolio.
     <br />
-    Im working on a simple terminal with some basic commedns.
-    <br />
-    It will be ready soon :)
+    This is a demo of the terminal I'm working on.
     <br />
     try <span className="italic">clear</span> for clearing screen
   </>
@@ -20,7 +18,7 @@ type TerminalType = {
 };
 
 export default function Terminal() {
-  const [terminals, setTerminals] = useState<TerminalType[]>([]);
+  const [terminals, setTerminals] = useState<TerminalType[]>([{id:1, title:'Beta'}]);
   const [display, setDisplay] = useState(INTRO_TEXT);
   const [fullScreen, setFullScreen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -37,8 +35,9 @@ export default function Terminal() {
         default:
           print(
             <p className="text-red-600 block font-bold">
-              ERROR: Invalid command. Type "help" for the current list of
-              implemented commands.
+              ERROR: Invalid command. 
+              {/* Type "help" for the current list of
+              implemented commands. */}
             </p>
           );
       }
