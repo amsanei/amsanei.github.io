@@ -42,7 +42,7 @@ export default function Gallery({ cover }: GalleryProps) {
               />
             </svg>
           </div>
-          <div className="w-2/3 mx-auto mt-8">
+          <div className="grid place-content-center h-screen md:w-2/3 mx-auto">
             <Image
               src={cover.src}
               alt={cover.alt}
